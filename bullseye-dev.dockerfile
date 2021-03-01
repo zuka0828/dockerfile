@@ -8,6 +8,7 @@ ARG USER_NAME=bullseye
 ARG USER_PASSWORD=bullseye
 ARG UID=1000
 
+RUN grep "^deb " /etc/apt/sources.list | sed "s@^deb@deb-src@" >> /etc/apt/sources.list
 RUN dpkg --add-architecture armhf
 RUN apt-get update && apt-get install -y \
 	vim.tiny sudo \

@@ -13,6 +13,7 @@ RUN dpkg --add-architecture armhf
 RUN apt-get update && apt-get install -y \
 	vim.tiny sudo \
 	build-essential autoconf pkg-config libtool \
+	bc bison flex libssl-dev libncurses5-dev \
 	crossbuild-essential-armhf
 
 # Create an user

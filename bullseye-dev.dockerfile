@@ -10,10 +10,12 @@ ARG UID=1000
 
 RUN grep "^deb " /etc/apt/sources.list | sed "s@^deb@deb-src@" >> /etc/apt/sources.list
 RUN dpkg --add-architecture armhf
+RUN dpkg --add-architecture arm64
 RUN apt-get update && apt-get install -y \
 	vim.tiny sudo \
 	build-essential autoconf pkg-config libtool \
 	bc bison flex libssl-dev libncurses5-dev \
+	crossbuild-essential-arm64 \
 	crossbuild-essential-armhf
 
 # Create an user

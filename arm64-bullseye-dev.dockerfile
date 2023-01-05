@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
 	vim.tiny sudo \
 	build-essential autoconf pkg-config libtool \
 	bc bison flex libssl-dev libncurses5-dev \
-	devscripts \
+	wget devscripts \
 	&& apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Create an user
